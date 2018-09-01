@@ -1,0 +1,47 @@
+*{
+	margin:0;
+	padding:0
+}
+
+#mainscreen{
+	width:320px;
+	height:568px;
+	margin: 0 auto;
+	position:relative;
+	overflow: hidden;
+}
+
+.bg{
+	width:320px;
+	height:568px;
+	position:absolute;
+	background-image: url(../img/background_1.png);
+}
+
+#bg2{
+	top:-568px;
+}
+
+#airplane{
+	width:66px;
+	height:80px;
+	background-image: url(../img/我的飞机.gif);
+	position:absolute;
+	left:130px;
+	top:400px;
+}
+
+.bullent{
+	width:6px;
+	height:14px;
+	background-image: url(../img/bullet1.png);
+	background-size: 6px,14px;
+	position:absolute;
+}
+
+.enemy{
+	position:absolute;
+	width:46px;
+	height:60px;
+	background-image:url(../img/enemy3_fly_1.png);
+}
