@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <link rel="stylesheet" href="../static/css/sub.css" />
+    <title>查询学生信息</title>
+</head>
+<body>
+<form action="/find_res/" method="POST">
+    {%csrf_token%}
+    <p>输入查询信息的关键字:<br/>
+        id值:
+        <input type="text" name="id"><hr/>
+
+    <p>姓名: <input type="text" name="name"><hr/></p>
+        <input type="submit">
+</p>
+</form>
+<p><a href="/">回到首页</a></p>
+</body>
+</html>

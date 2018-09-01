@@ -1,0 +1,19 @@
+ <!doctype html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                 <link rel="stylesheet" href="../static/css/sub.css" />
+                <title>学生页面</title>
+            </head>
+            <body>
+                <h1>学生信息列表</h1>
+                <ul>
+                    {%for student in students%}
+                    <li>
+                        {{student.sname}}--{{student.scontend}}
+                    </li>
+                    {%endfor%}
+                </ul>
+            <p><a href="/">回到首页</a></p>
+            </body>
+            </html>

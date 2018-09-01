@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <link rel="stylesheet" href="../static/css/sub.css" />
+    <link rel="stylesheet" href="../static/css/sub.css" />
+    <title>查询结果</title>
+</head>
+<body>
+<p>搜索的结果是: </p>
+{%for row in res%}
+<p>学生ID:{{row.id}}</p>
+<p>学生姓名:{{row.name}}</p>
+<p>学生年龄:{{row.age}}</p>
+<p>学生简介:{{row.scontend}}</p>
+{%endfor%}
+<p><a href="/">回到首页</a></p>
+</body>
+</html>

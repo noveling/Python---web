@@ -1,0 +1,22 @@
+<head>
+    <meta charset="UTF-8">
+     <link rel="stylesheet" href="../static/css/sub.css" />
+    <title>添加老师</title>
+</head>
+<body>
+<h1>添加老师</h1>
+<form action="/addteacher/" method="POST">
+    {%csrf_token%}
+    <p>所在班级: {%for row in classesitem%}
+        <input type="radio" name="tclass" value ={{row.id}}>
+        {{row.name}}
+        {%endfor%}
+    </p>
+    <p>老师名称: <input type="text" name="name"></p>
+    <p>老师年龄: <input type="text" name="age"></p>
+    <p>老师信息: <input type="text" name="tcontend"></p>
+    <input type="submit">
+</form>
+<p><a href="/">回到首页</a></p>
+</body>
+</html>

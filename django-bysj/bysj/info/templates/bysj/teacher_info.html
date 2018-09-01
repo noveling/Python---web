@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <link rel="stylesheet" href="../static/css/sub.css" />
+    <title>查看信息</title>
+</head>
+<body>
+<p class="table">老师的信息表</p>
+<hr/>
+<table>
+    <tr>
+        <th>老师ID</th>
+        <th>老师姓名</th>
+        <th>老师年龄</th>
+        <th id="contend">老师简介</th>
+    </tr>
+    {%for row in teachersitem%}
+    <tr>
+        <td>{{row.id}}</td>
+        <td>{{row.name}}</td>
+        <td>{{row.age}}</td>
+        <td>{{row.tcontend}}</td>
+    </tr>
+    {%endfor%}
+</table>
+<hr/>
+<p><a href="/">回到首页</a></p>
+</body>
+</html>

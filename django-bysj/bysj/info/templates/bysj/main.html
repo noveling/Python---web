@@ -1,0 +1,175 @@
+ <!--<!doctype html>-->
+            <!--<html lang="en">-->
+            <!--<head>-->
+                <!--<meta charset="UTF-8">-->
+                <!--<meta name="viewport"-->
+                      <!--content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+                <!--<meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+                <!--<link rel="stylesheet" href="../static/css/bysj.css" />-->
+                <!--<title>主界面</title>-->
+            <!--</head>-->
+<!--<body>-->
+<!--<h1>欢迎来到学生信息管理系统</h1><br />-->
+<!--<p>选择你要执行的功能</p>-->
+<!--<p>{{hello}}</p>-->
+<!--<p><a href="/addclass">添加班级</a></p>-->
+<!--<p><a href="/teacher">老师信息</a></p>-->
+<!--<p><a href="/addstudent">增加学生信息</a></p>-->
+<!--<p><a href="/find_info">查询学生信息</a></p>-->
+<!--<p><a href="/delete">删除学生信息</a></p>-->
+<!--<p><a href="/rewrite">修改学生信息</a></p>-->
+<!--</body>-->
+<!--</html>-->
+ <!DOCTYPE HTML>
+<html>
+<head>
+<title>学生信息管理系统</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Tuition Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="../static/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<link href="../static/css/style.css" rel='stylesheet' type='text/css' />
+<link href="../static/css/swipebox.css" rel='stylesheet' type='text/css' />
+<script src="../static/js/jquery-1.11.1.min.js"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../static/js/move-top.js"></script>
+<script type="text/javascript" src="../static/js/easing.js"></script>
+<!--/script-->
+<script src="../static/js/modernizr.custom.97074.js"></script>
+
+<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},900);
+				});
+			});
+</script>
+	<!--script-->
+<script src="../static/js/jquery.swipebox.min.js"></script>
+					<script type="text/javascript">
+						jQuery(function($) {
+							$(".swipebox").swipebox();
+						});
+					</script>
+
+
+</head>
+<body>
+	<!--header-->
+	          <ul class="side_nav">
+							<li><a class="active scroll" href="#home"></a></li>
+							<li><a class="scroll" href="#services"></a></li>
+					</ul>
+
+	<div class="header-section" id="home">
+		<div class="header-top">
+		     <div class="container">
+			   <div class="inner-head">
+			     <p class="col-md-4 mail"><a href="/admin">后台管理页面</a></p>
+			     <p class="col-md-4 phone"> life is a song!</p>
+				   <p class="col-md-4 location"><a href="#bottom">直达底部</a></p>
+				   <div class="clearfix"></div>
+               </div>
+             </div>
+			 <div class="down"><a class="scroll" href="#about">
+				 <img src="../static/images/arrow_down.png" alt=""/></a></div>
+       </div>
+			<!--logo-->
+		</div>
+		<!--banner-->
+       <div class="banner">
+			<div class="banner-top">
+			   <h3>欢迎来到学生信息管理页面</h3>
+			   <a class="ready" href="#">start now!</a>
+		    </div>
+	   </div>
+   <svg id="curveDownColor" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
+				<path d="M0 0 C 50 100 80 100 100 0 Z"></path>
+			</svg>
+   <!--start-services-->
+	<div class="services" id="services">
+	 	  <div class="container">
+		  <h3 class="tittle">查看信息总览 </h3>
+	 		<div class="box2">
+	 		   <div class="col-md-4 s-1"><a href="#">
+	 		   	<div class="view view-fifth">
+                      <i class="glyphicon glyphicon-book"></i>
+                    <div class="mask">
+                        <h4>操作学生信息</h4>
+						<p class="p2"><a href="/addstudent">增加学生信息</a></p>
+						<p class="p2"><a href="/find_info">查询学生信息</a></p>
+						<p class="p2"><a href="/delete">删除学生信息</a></p>
+						<p class="p2"><a href="/rewrite">修改学生信息</a></p>
+                     </div>
+                    <h3>学生信息<br> first</h3>
+				    </div>
+				  </a>
+
+				</div>
+		<div class="col-md-4 s-2"><a href="#">
+	 		   	<div class="view view-fifth">
+                      <i class="glyphicon glyphicon-pencil"></i>
+                    <div class="mask">
+                        <h4>操作老师信息</h4>
+                        <h5>进入操作详情页</h5>
+					<p><a href="/teacher">老师信息</a></p>
+
+                     </div>
+                    <h3>老师信息<br> second</h3>
+				    </div>
+				  </a>
+
+				</div>
+			  <div class="col-md-4 s-3"><a href="#">
+	 		   	<div class="view view-fifth">
+                     <i class="glyphicon glyphicon-paperclip"></i>
+                    <div class="mask">
+                        <h4>班级操作</h4>
+                        <p><a href="/addclass">添加班级</a></p>
+                     </div>
+                    <h3>班级信息<br> third</h3>
+				    </div>
+				  </a>
+
+				</div>
+				<div class="clearfix" id="bottom"></div>
+		     </div>
+	 	    </div>
+	 	</div>
+	<!--end-about-->
+
+
+
+	<!--start-smooth-scrolling-->
+			<script type="text/javascript">
+								jQuery(document).ready(function($) {
+									$(".scroll").click(function(event){
+										event.preventDefault();
+										$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+									});
+								});
+								</script>
+							<!--start-smoth-scrolling-->
+						<script type="text/javascript">
+									$(document).ready(function() {
+										/*
+										var defaults = {
+								  			containerID: 'toTop', // fading element id
+											containerHoverID: 'toTopHover', // fading element hover id
+											scrollSpeed: 1200,
+											easingType: 'linear'
+								 		};
+										*/
+
+										$().UItoTop({ easingType: 'easeOutQuart' });
+
+									});
+								</script>
+		<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+</body>
+</html>

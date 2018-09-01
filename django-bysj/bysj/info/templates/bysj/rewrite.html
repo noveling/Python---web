@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <link rel="stylesheet" href="../static/css/sub.css" />
+    <title>修改信息</title>
+</head>
+<body>
+<form action="/rewrite/" method="POST">
+    {%csrf_token%}
+    <p>需要修改学生的ID: <input type="text" name="rwid"></p>
+    <p>学生班级: {%for row in classesitem%}
+        <input type="radio" name="sclass" value ={{row.id}}>
+        {{row.name}}
+        {%endfor%}
+    </p>
+    <p>学生名称: <input type="text" name="name"></p>
+    <p>学生年龄: <input type="text" name="age"></p>
+    <p>学生信息: <input type="text" name="scontend"></p>
+    <input type="submit">
+</form>
+<p><a href="/">回到首页</a></p>
+</body>
+</html>
