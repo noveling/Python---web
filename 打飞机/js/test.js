@@ -126,7 +126,6 @@ var timerpzjc = setInterval(function(){
 
 var timerdied = setInterval(function(){
 	var alltanks = document.getElementsByClassName("enemy")
-
 		for(var i=0;i<alltanks.length;i++)
 		{
 			if(pzjcfunc(alltanks[i],airplane)){
@@ -134,7 +133,28 @@ var timerdied = setInterval(function(){
 				{
 					clearInterval(j)
 				}
-				mainscreen.removeChild(airplane)
+				clearInterval(timerbullent)
+				clearInterval(timerenemy)
+				while(mainscreen.hasChildNodes()){
+					mainscreen.removeChild(mainscreen.firstChild);
+				}
+				var bg = document.createElement("div")
+				bg.className = "funbg"
+				mainscreen.appendChild(bg)
+				var reframe = document.createElement("div")
+				reframe.className = "firstbutton"
+				bg.appendChild(reframe)
+				var rebutton = document.createElement("button")
+				rebutton.innerHTML="重新开始"
+				rebutton.addEventListener("click",function(){
+					window.location.reload()
+				})
+				reframe.appendChild(rebutton)
+				var scoretext = document.createElement("p")
+				scoretext.className = "content-text"
+				scoretext.id = "js_addscore"
+				scoretext.innerHTML = "得分："+ score;
+				mainscreen.appendChild(scoretext);
 			}
 		}
 },50)
