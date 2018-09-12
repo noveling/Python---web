@@ -45,3 +45,24 @@
 	height:60px;
 	background-image:url(../img/enemy3_fly_1.png);
 }
+
+.boom{
+	position:absolute;
+	width:46px;
+	height:60px;
+	background-image:url(../img/中飞机爆炸.gif);
+
+}
+
+.content-text{
+	position:absolute;
+	z-index:9999;
+	left:50px;
+	top:10px;
+	font-family:"Times New Roman",Georgia,Serif;
+	font-size:28px;
+}
+
+#score{
+	left:150px;
+}

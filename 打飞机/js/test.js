@@ -1,6 +1,8 @@
 var jsbg1 = document.getElementById("bg1")
 var jsbg2 = document.getElementById("bg2")
 var mainscreen = document.getElementById("mainscreen")
+var score = 0
+var scoreinfo = document.getElementById("score")
 var timerBg = setInterval(function(){
 	jsbg1.style.top = jsbg1.offsetTop + 1+"px"
 	jsbg2.style.top = jsbg2.offsetTop + 1 +"px"
@@ -12,6 +14,8 @@ var timerBg = setInterval(function(){
 		jsbg2.style.top = "-568px"
 	}
 })
+
+var boomitem = Array()
 
 var airplane = document.getElementById("airplane")
 airplane.addEventListener("mousedown",function(e){
@@ -76,6 +80,13 @@ var timerenemy = setInterval(function(){
 },1000)
 
 
+//生成爆炸效果
+for(var i = 0; i < 10; i++){
+	boomitem.push(document.createElement("div"))
+}
+
+
+
 var timerpzjc = setInterval(function(){
 	var alltanks = document.getElementsByClassName("enemy")
 	var allbullents = document.getElementsByClassName("bullent")
@@ -87,16 +98,30 @@ var timerpzjc = setInterval(function(){
 			var b = allbullents[i]
 			var t = alltanks[j]
 			if(pzjcfunc(b,t)){
+				score += 10
+				scoreinfo.innerHTML=score.toString()
+				console.log("得分:"+scoreinfo.innerHTML)
+				console.log(t.style.background)
 				clearInterval(b.timer)
 				clearInterval(t.timer)
-				
 				mainscreen.removeChild(b)
 				mainscreen.removeChild(t)
+				var boom = boomitem.pop()
+				boom.style.display = "block"
+				boom.className = "boom"
+				boom.style.left = t.style.left
+				boom.style.top = t.style.top
+				mainscreen.appendChild(boom)
+				var boomflight = setTimeout(function(){
+					console.log(boom.style.background)
+					mainscreen.removeChild(boom)
+					boomitem.push(boom)
+				},150)
+				boom.timer = boomflight
 				break
 			}
-			
 		}
-}
+	}
 },50)
 
 var timerdied = setInterval(function(){
@@ -135,3 +160,7 @@ function pzjcfunc(obj1,obj2){
 		return false;
 	}
 }
+
+function sleep(d){
+	for(var t = Date.now();Date.now() - t <= d;);
+  }
