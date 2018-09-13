@@ -52,10 +52,10 @@ var timerbullent = setInterval(function(){
 	var timebullentfly = setInterval(function(){
 		bullent.style.top = bullent.offsetTop-5+"px"
 		if(bullent.offsetTop < 20){
-			clearInterval(timebullentfly)
-			mainscreen.removeChild(bullent)
+			clearInterval(timebullentfly);
+			mainscreen.removeChild(bullent);
 		}
-	},15)
+	},10)
 	bullent.timer = timebullentfly
 },350)
 
@@ -65,28 +65,47 @@ var timerbullent = setInterval(function(){
 var timerenemy = setInterval(function(){
 	var enemy = document.createElement("div")
 	enemy.className="enemy"
-	enemy.style.left = parseInt(Math.random()*270)+"px"
+	enemy.style.left = parseInt(Math.random()*270)+23+"px"
 	enemy.style.top = 0 + "px"
 	mainscreen.appendChild(enemy)
 	
 	var timebullentfly = setInterval(function(){
 		enemy.style.top = enemy.offsetTop+5+"px"
 		if(enemy.offsetTop > 500){
-			clearInterval(timebullentfly)
-			mainscreen.removeChild(enemy)
+			clearInterval(timebullentfly);
+			mainscreen.removeChild(enemy);
 		}
 	},50)
 	enemy.timer = timebullentfly
 },1000)
 
+//生成大飞机
+var timerbossplane = setInterval(function(){
+	var bossplane = document.createElement("div");
+	bossplane.className = "bossplane";
+	bossplane.setAttribute("life",6);
+	bossplane.style.left = parseInt(Math.random()*200)+60+"px";
+	bossplane.style.top = 0 + "px";
+	mainscreen.appendChild(bossplane);
+	var timebullentfly = setInterval(function(){
+		bossplane.style.top = bossplane.offsetTop+2+"px";
+		if(bossplane.offsetTop > 500){
+			clearInterval(timebullentfly);
+			mainscreen.removeChild(bossplane);
+		}
+	},100)
+	bossplane.timer = timebullentfly
+},13000)
+
 
 //生成爆炸效果
+
 for(var i = 0; i < 10; i++){
 	boomitem.push(document.createElement("div"))
 }
 
 
-
+//击中普通敌机
 var timerpzjc = setInterval(function(){
 	var alltanks = document.getElementsByClassName("enemy")
 	var allbullents = document.getElementsByClassName("bullent")
@@ -124,6 +143,53 @@ var timerpzjc = setInterval(function(){
 	}
 },50)
 
+//击中boss敌机
+var timerpzjc = setInterval(function(){
+	var alltanks = document.getElementsByClassName("bossplane")
+	var allbullents = document.getElementsByClassName("bullent")
+	for(var i = 0;i < allbullents.length;i++)
+	{
+		
+		for(var j=0;j<alltanks.length;j++)
+		{
+			var b = allbullents[i]
+			var t = alltanks[j]
+			if(pzjcfunc(b,t)){
+				score += 30
+				var life = parseInt(t.getAttribute('life'))
+				life --;
+				t.setAttribute("life",life)
+				console.log("boss生命值：" + t.getAttribute('life'))
+				scoreinfo.innerHTML=score.toString()
+				console.log("得分:"+scoreinfo.innerHTML)
+				console.log(t.style.background)
+				clearInterval(b.timer)
+				mainscreen.removeChild(b)
+				if(life ==4){
+					t.style.backgroundImage = "url('img/大飞机挨打.png')"
+				}
+				if(life == 0){
+					clearInterval(t.timer);
+					mainscreen.removeChild(t);
+					var boom = boomitem.pop();
+					boom.style.display = "block";
+					boom.className = "bossboom";
+					boom.style.left = t.style.left;
+					boom.style.top = t.style.top;
+					mainscreen.appendChild(boom);
+					var boomflight = setTimeout(function(){
+						console.log(boom.style.background);
+						mainscreen.removeChild(boom);
+						boomitem.push(boom);
+					},400);
+					boom.timer = boomflight;
+				}
+				break;
+			}
+		}
+	}
+},50)
+
 var timerdied = setInterval(function(){
 	var alltanks = document.getElementsByClassName("enemy")
 		for(var i=0;i<alltanks.length;i++)
@@ -133,11 +199,15 @@ var timerdied = setInterval(function(){
 				{
 					clearInterval(j)
 				}
-				clearInterval(timerbullent)
 				clearInterval(timerenemy)
+				clearInterval(timerbullent)
 				while(mainscreen.hasChildNodes()){
 					mainscreen.removeChild(mainscreen.firstChild);
 				}
+				// var removeenemy = document.getElementsByClassName("enemy");
+				// for(var i = 0; i < removeenemy.length;i++){
+				// 	removeenemy[i].parentNode.removeChild(removeenemy[i]);
+				// }
 				var bg = document.createElement("div")
 				bg.className = "funbg"
 				mainscreen.appendChild(bg)
