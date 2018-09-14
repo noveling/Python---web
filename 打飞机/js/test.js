@@ -45,7 +45,7 @@ airplane.addEventListener("mousedown",function(e){
 var timerbullent = setInterval(function(){
 	var bullent = document.createElement("div")
 	bullent.className="bullent"
-	bullent.style.left = airplane.offsetLeft+30+"px"
+	bullent.style.left = airplane.offsetLeft + 30 + "px"
 	bullent.style.top = airplane.offsetTop - 10 + "px"
 	mainscreen.appendChild(bullent)
 	
@@ -59,12 +59,31 @@ var timerbullent = setInterval(function(){
 	bullent.timer = timebullentfly
 },350)
 
+//杂鱼出现
+var timertrash = setInterval(function(){
+	var trash = document.createElement("div")
+	trash.className = "trash"
+	trash.style.left = parseInt(Math.random()*286) + 17 + "px";
+	trash.style.top = 0 + "px"
+	mainscreen.appendChild(trash)
+
+	var trashfly = setInterval(function(){
+		trash.style.top = trash.offsetTop + 3 + "px";
+		if(trash.style.top > 500){
+			clearInterval(trashfly);
+			mainscreen.removeChild(enemy);
+		}
+	},20)
+	trash.timer = timertrash
+},1000)
+
 
 
 //敌人出现
 var timerenemy = setInterval(function(){
 	var enemy = document.createElement("div")
 	enemy.className="enemy"
+	enemy.setAttribute("life",2);
 	enemy.style.left = parseInt(Math.random()*270)+23+"px"
 	enemy.style.top = 0 + "px"
 	mainscreen.appendChild(enemy)
@@ -99,14 +118,51 @@ var timerbossplane = setInterval(function(){
 
 
 //生成爆炸效果
-
-for(var i = 0; i < 10; i++){
+for(var i = 0; i < 20; i++){
 	boomitem.push(document.createElement("div"))
 }
 
+//击中杂鱼
+var trashpzjc = setInterval(function(){
+	var alltanks = document.getElementsByClassName("trash")
+	var allbullents = document.getElementsByClassName("bullent")
+	for(var i = 0;i < allbullents.length;i++)
+	{
+		
+		for(var j=0;j<alltanks.length;j++)
+		{
+			var b = allbullents[i]
+			var t = alltanks[j]
+			if(pzjcfunc(b,t)){
+				clearInterval(b.timer)
+				mainscreen.removeChild(b)
+				score +=5
+				console.log("得分:"+scoreinfo.innerHTML)
+				console.log(t.style.background)
+				scoreinfo.innerHTML=score.toString()
+				clearInterval(t.timer)
+				mainscreen.removeChild(t)
+				var boom = boomitem.pop()
+				boom.style.display = "block"
+				boom.className = "trashboom"
+				boom.style.left = t.style.left
+				boom.style.top = t.style.top
+				mainscreen.appendChild(boom)
+				var boomflight = setTimeout(function(){
+					console.log(boom.style.background)
+					mainscreen.removeChild(boom)
+					boomitem.push(boom)
+				},150);
+				boom.timer = boomflight
+					break
+			}
+		}
+	}
+},50)
+
 
 //击中普通敌机
-var timerpzjc = setInterval(function(){
+var enemypzjc = setInterval(function(){
 	var alltanks = document.getElementsByClassName("enemy")
 	var allbullents = document.getElementsByClassName("bullent")
 	for(var i = 0;i < allbullents.length;i++)
@@ -117,26 +173,35 @@ var timerpzjc = setInterval(function(){
 			var b = allbullents[i]
 			var t = alltanks[j]
 			if(pzjcfunc(b,t)){
-				score += 10
+				var life = parseInt(t.getAttribute("life"));
+				life --;
+				t.setAttribute("life",life);
 				scoreinfo.innerHTML=score.toString()
-				console.log("得分:"+scoreinfo.innerHTML)
-				console.log(t.style.background)
 				clearInterval(b.timer)
-				clearInterval(t.timer)
 				mainscreen.removeChild(b)
-				mainscreen.removeChild(t)
-				var boom = boomitem.pop()
-				boom.style.display = "block"
-				boom.className = "boom"
-				boom.style.left = t.style.left
-				boom.style.top = t.style.top
-				mainscreen.appendChild(boom)
-				var boomflight = setTimeout(function(){
-					console.log(boom.style.background)
-					mainscreen.removeChild(boom)
-					boomitem.push(boom)
-				},150)
-				boom.timer = boomflight
+				if(life == 1){
+					t.style.backgroundImage = "url('img/中飞机挨打.png')"
+				}
+				if(life == 0){
+					score +=10
+					console.log("得分:"+scoreinfo.innerHTML)
+					console.log(t.style.background)
+					scoreinfo.innerHTML=score.toString()
+					clearInterval(t.timer)
+					mainscreen.removeChild(t)
+					var boom = boomitem.pop()
+					boom.style.display = "block"
+					boom.className = "boom"
+					boom.style.left = t.style.left
+					boom.style.top = t.style.top
+					mainscreen.appendChild(boom)
+					var boomflight = setTimeout(function(){
+						console.log(boom.style.background)
+						mainscreen.removeChild(boom)
+						boomitem.push(boom)
+					},120);
+					boom.timer = boomflight
+				}
 				break
 			}
 		}
@@ -144,7 +209,7 @@ var timerpzjc = setInterval(function(){
 },50)
 
 //击中boss敌机
-var timerpzjc = setInterval(function(){
+var bosspzjc = setInterval(function(){
 	var alltanks = document.getElementsByClassName("bossplane")
 	var allbullents = document.getElementsByClassName("bullent")
 	for(var i = 0;i < allbullents.length;i++)
@@ -155,7 +220,9 @@ var timerpzjc = setInterval(function(){
 			var b = allbullents[i]
 			var t = alltanks[j]
 			if(pzjcfunc(b,t)){
-				score += 30
+				if(life > 1){
+					score += 1
+				}
 				var life = parseInt(t.getAttribute('life'))
 				life --;
 				t.setAttribute("life",life)
@@ -169,6 +236,8 @@ var timerpzjc = setInterval(function(){
 					t.style.backgroundImage = "url('img/大飞机挨打.png')"
 				}
 				if(life == 0){
+					score +=30
+					scoreinfo.innerHTML=score.toString()
 					clearInterval(t.timer);
 					mainscreen.removeChild(t);
 					var boom = boomitem.pop();
@@ -195,7 +264,7 @@ var timerdied = setInterval(function(){
 		for(var i=0;i<alltanks.length;i++)
 		{
 			if(pzjcfunc(alltanks[i],airplane)){
-				for(var j=0;j<100;j++)
+				for(var j=0;j<1000;j++)
 				{
 					clearInterval(j)
 				}
