@@ -261,41 +261,111 @@ var bosspzjc = setInterval(function(){
 
 var timerdied = setInterval(function(){
 	var alltanks = document.getElementsByClassName("enemy")
-		for(var i=0;i<alltanks.length;i++)
-		{
-			if(pzjcfunc(alltanks[i],airplane)){
-				for(var j=0;j<1000;j++)
-				{
-					clearInterval(j)
-				}
-				clearInterval(timerenemy)
-				clearInterval(timerbullent)
-				while(mainscreen.hasChildNodes()){
-					mainscreen.removeChild(mainscreen.firstChild);
-				}
-				// var removeenemy = document.getElementsByClassName("enemy");
-				// for(var i = 0; i < removeenemy.length;i++){
-				// 	removeenemy[i].parentNode.removeChild(removeenemy[i]);
-				// }
-				var bg = document.createElement("div")
-				bg.className = "funbg"
-				mainscreen.appendChild(bg)
-				var reframe = document.createElement("div")
-				reframe.className = "firstbutton"
-				bg.appendChild(reframe)
-				var rebutton = document.createElement("button")
-				rebutton.innerHTML="重新开始"
-				rebutton.addEventListener("click",function(){
-					window.location.reload()
-				})
-				reframe.appendChild(rebutton)
-				var scoretext = document.createElement("p")
-				scoretext.className = "content-text"
-				scoretext.id = "js_addscore"
-				scoretext.innerHTML = "得分："+ score;
-				mainscreen.appendChild(scoretext);
+	var alltrashes = document.getElementsByClassName("trash")
+	var allbossplane = document.getElementsByClassName("bossplane")
+	for(var i=0;i<alltrashes.length;i++)
+	{
+		if(pzjcfunc(alltrashes[i],airplane)){
+			for(var j=0;j<1000;j++)
+			{
+				clearInterval(j)
 			}
+			clearInterval(timerenemy)
+			clearInterval(timerbossplane)
+			clearInterval(timertrash)
+			clearInterval(timerbullent)
+			while(mainscreen.hasChildNodes()){
+				mainscreen.removeChild(mainscreen.firstChild);
+			}
+			var bg = document.createElement("div")
+			bg.className = "funbg"
+			mainscreen.appendChild(bg)
+			var reframe = document.createElement("div")
+			reframe.className = "firstbutton"
+			bg.appendChild(reframe)
+			var rebutton = document.createElement("button")
+			rebutton.innerHTML="重新开始"
+			rebutton.addEventListener("click",function(){
+				window.location.reload()
+			})
+			reframe.appendChild(rebutton)
+			var scoretext = document.createElement("p")
+			scoretext.className = "content-text"
+			scoretext.id = "js_addscore"
+			scoretext.innerHTML = "得分："+ score;
+			mainscreen.appendChild(scoretext);
 		}
+	}
+	for(var i=0;i<allbossplane.length;i++)
+	{
+		if(pzjcfunc(allbossplane[i],airplane)){
+			for(var j=0;j<1000;j++)
+			{
+				clearInterval(j)
+			}
+			clearInterval(timerenemy)
+			clearInterval(timerbossplane)
+			clearInterval(timertrash)
+			clearInterval(timerbullent)
+			while(mainscreen.hasChildNodes()){
+				mainscreen.removeChild(mainscreen.firstChild);
+			}
+			var bg = document.createElement("div")
+			bg.className = "funbg"
+			mainscreen.appendChild(bg)
+			var reframe = document.createElement("div")
+			reframe.className = "firstbutton"
+			bg.appendChild(reframe)
+			var rebutton = document.createElement("button")
+			rebutton.innerHTML="重新开始"
+			rebutton.addEventListener("click",function(){
+				window.location.reload()
+			})
+			reframe.appendChild(rebutton)
+			var scoretext = document.createElement("p")
+			scoretext.className = "content-text"
+			scoretext.id = "js_addscore"
+			scoretext.innerHTML = "得分："+ score;
+			mainscreen.appendChild(scoretext);
+		}
+	}
+	for(var i=0;i<alltanks.length;i++)
+	{
+		if(pzjcfunc(alltanks[i],airplane)){
+			for(var j=0;j<1000;j++)
+			{
+				clearInterval(j)
+			}
+			clearInterval(timerenemy)
+			clearInterval(timerbossplane)
+			clearInterval(timertrash)
+			clearInterval(timerbullent)
+			while(mainscreen.hasChildNodes()){
+				mainscreen.removeChild(mainscreen.firstChild);
+			}
+			// var removeenemy = document.getElementsByClassName("enemy");
+			// for(var i = 0; i < removeenemy.length;i++){
+			// 	removeenemy[i].parentNode.removeChild(removeenemy[i]);
+			// }
+			var bg = document.createElement("div")
+			bg.className = "funbg"
+			mainscreen.appendChild(bg)
+			var reframe = document.createElement("div")
+			reframe.className = "firstbutton"
+			bg.appendChild(reframe)
+			var rebutton = document.createElement("button")
+			rebutton.innerHTML="重新开始"
+			rebutton.addEventListener("click",function(){
+				window.location.reload()
+			})
+			reframe.appendChild(rebutton)
+			var scoretext = document.createElement("p")
+			scoretext.className = "content-text"
+			scoretext.id = "js_addscore"
+			scoretext.innerHTML = "得分："+ score;
+			mainscreen.appendChild(scoretext);
+		}
+	}
 },50)
 
 //碰撞检测
