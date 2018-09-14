@@ -74,8 +74,8 @@ var timertrash = setInterval(function(){
 			mainscreen.removeChild(enemy);
 		}
 	},20)
-	trash.timer = timertrash
-},1000)
+	trash.timer = trashfly;
+},500)
 
 
 
