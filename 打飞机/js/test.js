@@ -128,7 +128,6 @@ var trashpzjc = setInterval(function(){
 	var allbullents = document.getElementsByClassName("bullent")
 	for(var i = 0;i < allbullents.length;i++)
 	{
-		
 		for(var j=0;j<alltanks.length;j++)
 		{
 			var b = allbullents[i]
@@ -172,8 +171,8 @@ var enemypzjc = setInterval(function(){
 		{
 			var b = allbullents[i]
 			var t = alltanks[j]
+			var life = parseInt(t.getAttribute("life"));
 			if(pzjcfunc(b,t)){
-				var life = parseInt(t.getAttribute("life"));
 				life --;
 				t.setAttribute("life",life);
 				scoreinfo.innerHTML=score.toString()
@@ -219,11 +218,12 @@ var bosspzjc = setInterval(function(){
 		{
 			var b = allbullents[i]
 			var t = alltanks[j]
+			var life = parseInt(t.getAttribute('life'))
 			if(pzjcfunc(b,t)){
 				if(life > 1){
 					score += 1
+					scoreinfo.innerHTML=score.toString()
 				}
-				var life = parseInt(t.getAttribute('life'))
 				life --;
 				t.setAttribute("life",life)
 				console.log("boss生命值：" + t.getAttribute('life'))
