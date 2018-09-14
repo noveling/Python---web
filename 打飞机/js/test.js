@@ -118,7 +118,7 @@ var timerbossplane = setInterval(function(){
 
 
 //生成爆炸效果
-for(var i = 0; i < 20; i++){
+for(var i = 0; i < 40; i++){
 	boomitem.push(document.createElement("div"))
 }
 
