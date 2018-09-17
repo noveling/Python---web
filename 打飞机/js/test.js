@@ -289,6 +289,18 @@ var timerdied = setInterval(function(){
 				window.location.reload()
 			})
 			reframe.appendChild(rebutton)
+
+			var newframe = document.createElement("div")
+			newframe.className = "firstbutton"
+			bg.appendChild(newframe)
+			var newbutton = document.createElement("button")
+			newbutton.innerHTML="回到首页"
+			newframe.setAttribute("id","goaheadbutton")
+			newframe.appendChild(newbutton)
+			newbutton.addEventListener("click",function(){
+				window.location.href = "html/startgame.html"
+			})
+
 			var scoretext = document.createElement("p")
 			scoretext.className = "content-text"
 			scoretext.id = "js_addscore"
@@ -322,6 +334,18 @@ var timerdied = setInterval(function(){
 				window.location.reload()
 			})
 			reframe.appendChild(rebutton)
+
+			var newframe = document.createElement("div")
+			newframe.className = "firstbutton"
+			bg.appendChild(newframe)
+			var newbutton = document.createElement("button")
+			newbutton.innerHTML="回到首页"
+			newframe.setAttribute("id","goaheadbutton")
+			newframe.appendChild(newbutton)
+			newbutton.addEventListener("click",function(){
+				window.location.href = "html/startgame.html"
+			})
+
 			var scoretext = document.createElement("p")
 			scoretext.className = "content-text"
 			scoretext.id = "js_addscore"
@@ -359,6 +383,18 @@ var timerdied = setInterval(function(){
 				window.location.reload()
 			})
 			reframe.appendChild(rebutton)
+
+			var newframe = document.createElement("div")
+			newframe.className = "firstbutton"
+			bg.appendChild(newframe)
+			var newbutton = document.createElement("button")
+			newbutton.innerHTML="回到首页"
+			newframe.setAttribute("id","goaheadbutton")
+			newframe.appendChild(newbutton)
+			newbutton.addEventListener("click",function(){
+				window.location.href = "html/startgame.html"
+			})
+
 			var scoretext = document.createElement("p")
 			scoretext.className = "content-text"
 			scoretext.id = "js_addscore"
