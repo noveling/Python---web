@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css怎么可能会写这么久....</title>
+    <link rel="stylesheet" href="css/index.css" type="text/css">
+    <script src="js/jquery-3.3.1.js"></script>
+    <link rel="mask-icon" sizes="any" href="https://img.t.sinajs.cn/t6/style/images/apple/wbfont.svg" color="black">
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script src="./js/index.js"></script>
+</head>
+<body>
+    <!-- 头部导航栏 -->
+    <header>
+        <div class="nav_header">
+            <nav>
+                <span class="logo"></span>
+            </nav>
+            <!-- 搜索栏 -->
+            <div class="wb_search">
+                <span class="placehold">大家都在搜:我们把重要的事情说个三遍怎么样</span>
+                <input type="text">
+                <a href="#"></a>
+            </div>
+            <!-- 功能列表 -->
+            <div class="fun_list">
+            <!-- 导航列表 -->
+                <div class="nav_list">
+                    <ul>
+                        <li><span class="icon"><img src="./img/homelogo.png" alt="哼哼"></span><span class="W_txt">首页</span></li>
+                        <li><span class="icon"><img src="./img/playlogo.png" alt="哼哼"></span><span class="W_txt">视频</span></li>
+                        <li><span class="icon"><img src="./img/dislogo.png" alt="哼哼"></span><span class="W_txt">发现</span></li>
+                        <li><span class="icon"><img src="./img/gamelogo.png" alt="哼哼"></span><span class="W_txt">游戏</span></li>
+                        <li><span class="icon"><img src="./img/userlogo.png" alt="哼哼"></span><span class="W_txt">未登录</span></li>
+                    </ul>
+                </div>
+                <!-- 设置列表 -->
+                <div class="set_list">
+                    <ul class="icon_list">
+                        <li class="set_icon"><img src="./img/maillogo.png" alt="哼哼"></li>
+                        <li class="set_icon"><img src="./img/settinglogo.png" alt="哼哼"></li>
+                        <li class="set_icon"><img src="./img/editlogo.png" alt="哼哼"></li>
+                    </ul>
+                </div>
+        </div>
+        </div>
+    </header>
+    <!-- 内容部分  -->
+    <section>
+        <div class="content">
+            <aside class="left_aside">
+                <div class="WB_left">
+                    <div class="left_item">
+                        <ul class="item_1">
+                            <li>首页</li>
+                            <li>我的收藏</li>
+                            <li>我的赞</li>
+                        </ul>
+                        <ul class="item_2">
+                            <li>热门视频</li>
+                            <li>热门微博</li>
+                        </ul>
+                        <ul class="item_3">
+                            <li>好友圈</li>
+                            <li>特别关注</li>
+                            <li>V+微博</li>
+                            <li>群微博</li>
+                            <li>悄悄关注</li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+            <article>
+                <div class="WB_main_C">
+                    <div class="WB_report">
+                        <div class="send_WB">
+                            <!-- 微博热词 -->
+                            <div class="send_title"><img src="./img/searchlogo.png" alt="哼哼"></div>
+                            <!-- 用户发言用的输入框 -->
+                            <div class="send_input">
+                                <textarea name="wbinput" id="wbinput" value=""></textarea>
+                            </div>
+                            <div class="clear"></div>
+                            <!-- 提交和相关功能按钮 -->
+                            <div class="WB_sub">
+                                <div class="sub_tool">
+                                    <ul>
+                                        <li><span>表情</span><span class="logo_tip"><img src="./img/tool1.png" alt="哼哼"></span></li>
+                                        <li><span>图片</span><span class="logo_tip"><img src="./img/tool2.png" alt="哼哼"></span></li>
+                                        <li><span>视频</span><span class="logo_tip"><img src="./img/tool3.png" alt="哼哼"></span></li>
+                                        <li><span>话题</span><span class="logo_tip"><img src="./img/tool4.png" alt="哼哼"></span></li>
+                                        <li><span>头条文章</span><span class="logo_tip"><img src="./img/tool5.png" alt="哼哼"></span></li>
+                                    </ul>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="sub_list">
+                                        <div class="sub_fun">公开</div>
+                                        <div class="sub_btn"><button  disabled=true>提交</button></div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 用户搜索栏 -->
+                    <div class="tab_box">
+                        <div class="wb_tab_boxx">
+                            <ul class="WB_tab">
+                                <li><a href="#">全部</a></li>
+                                <li><a href="#">原创</a></li>
+                                <li><a href="#">图片</a></li>
+                                <li><a href="#">视频</a></li>
+                                <li><a href="#">音乐</a></li>
+                                <li><a href="#">文章</a></li>
+                            </ul>
+                            <div class="wb_search_s">
+                                <div class="search_box">
+                                    <span class="wb_search_b wb_search">
+                                        <form action="#" method="get">
+                                            <input type="text" class="W_input" name="key_word" value="搜索我关注人的微博">
+                                            <span class="search_logo"><img src="./img/search.png" alt="哼哼"></span>
+                                        </form>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <!-- 微博内容和评论信息 -->
+                    <div class="WB_feed">
+                        <!-- 用户头像 -->
+                        <div class="wb_con_face">
+                            <img src="./img/defaulthead.gif" alt="哼哼">
+                        </div>
+                        <!-- 发布的内容 -->
+                        <div class="wb_feed_detail">
+                            <div class="wb_user_info">
+                                <span>体坛周报</span>
+                            </div>
+                            <div class="wb_time"><span>今天 14:24 来自 微博 weibo.com</span></div>
+                            <div class="wb_con_info"><p class="article">
+                                【凯帕维基百科界面被改：位置门将兼教练，执教胜率0%】
+                                今天凌晨的联赛杯决赛，切尔西门将凯帕因拒绝被替换下场引起了球迷的讨论。
+                                赛后，凯帕在维基百科的词条遭到更改，个人介绍被改成了“位置：门将兼教练”。
+                                他甚至被评价“在2019年联赛杯决赛中，凯帕成为了切尔西门将兼教练。
+                                那场比赛他遭到了执教生涯第一场失利。”该词条随后得到了更正，不过早已被网友截图留念。
+                            </p></div>
+                        </div>
+                        <!-- 评论信息 -->
+                        <div class="wb_con_hander">
+                            <ul class="wb_row_line">
+                                <li><span><img src="./img/tool_1.png" alt="哼哼"></span><span class="wb_tool_info">收藏</span></li>
+                                <li><span><img src="./img/tool_2.png" alt="哼哼"></span><span class="wb_tool_info">256</span></li>
+                                <li><span><img src="./img/tool_3.png" alt="哼哼"></span><span class="wb_tool_info">12</span></li>
+                                <li><span><img src="./img/tool_4.png" alt="哼哼"></span><span class="no_border wb_tool_info">1</span></li>
+                            </ul>
+                        </div>                      
+                    </div>
+                </div>
+                <!-- 状态栏 -->
+                <div class="Wb_main_R">
+                    <!-- 用户信息 -->
+                    <div class="wb_myinfo">
+                        <div class="cover">
+                            <div class="head_pic"><img src="./img/defaulthead.gif" alt="哼哼"></div>
+                        </div>
+                        <div class="innerwrap">
+                            <div class="namebox"><span>隔壁老王不讲话</span></div>
+                            <ul class="useratten">
+                                <li><span>60</span><span class="atten_txt">关注</span></li>
+                                <li><span>18</span><span class="atten_txt">粉丝</span></li>
+                                <li class="no_border"><span>1</span><span class="atten_txt">微博</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 热搜话题 -->
+                    <div class="wb_hot_card">
+                        <div class="wb_card_head">
+                            <span class="wb_title">微博热搜</span>
+                            <div class="opt_box"><span><img src="./img/loading.png" alt="哼哼"></span><span style="margin:2px 0 0 10px;">换一换</span></div>
+                        </div>
+                        <div class="wb_card_content">
+                            <ul>
+                                <li><span>#奥斯卡#</span><span class="hot_total">12.8亿</span></li>
+                                <li><span>#街头魔术#</span><span class="hot_total">2.3亿</span></li>
+                                <li><span>#IG夺冠#</span><span class="hot_total">7.5亿</span></li>
+                                <li><span>#戏法大师解密#</span><span class="hot_total">1258万</span></li>
+                                <li><span>#变形计#</span><span class="hot_total">5.3亿</span></li>
+                                <li><span>#新版水浒传#</span><span class="hot_total">1.1亿</span></li>
+                                <li><span>#倒流的时间#</span><span class="hot_total">200万</span></li>
+                                <li><span>#刘谦重出江湖#</span><span class="hot_total">3亿</span></li>
+                            </ul>
+                        </div>
+                        <div class="wb_card_footer">
+                            <span>加载更多&gt;</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+</html>
