@@ -219,8 +219,8 @@ div.left_item{
 article{
     width:850px;
     padding-left:150px;
-    /* 先随便设置个高度 */
-    height:1300px;
+    overflow: hidden;
+    min-height:1000px;
 }
 .WB_main_C{
     width:600px;
