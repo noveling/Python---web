@@ -1,0 +1,27 @@
+*{
+    margin:0;
+    padding:0;
+}
+section{
+    width:100%;
+    text-align:center;
+}
+ul{
+    display:inline-block;
+    width:800px;
+    list-style:none;
+    overflow: hidden;
+    margin:10px auto;
+}
+li{
+    float:left;
+    width:25%;
+    overflow: hidden;
+    transition:width 1s linear;
+}
+ul:hover li{
+    width:20%;
+}
+ul li:hover{
+    width:40%;
+}
