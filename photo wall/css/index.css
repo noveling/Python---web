@@ -21,10 +21,11 @@ ul{
     perspective: 1000px;
 }
 li{
+    box-shadow:0px 0px 4px #999;
     position:absolute;
-    margin:3px;
-    margin-left:20px;
-    transition:transform 1.7s linear, left 3s linear, top 3s linear, right 3s linear, bottom 3s linear;
+    transition:transform 1.7s linear,all 1s linear;
+    border-radius: 4px;
+    overflow: hidden;
 }
 img{
     width:300px;
@@ -72,5 +73,6 @@ li:nth-child(5){
     
 }
 li:hover{
-    transform:scale(2);
+    transform:scale(1.6);
+    z-index:999;
 }
