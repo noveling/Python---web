@@ -1,0 +1,100 @@
+*{
+    margin:0;
+    padding:0;
+}
+section{
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+ul{
+    position:relative;
+    margin:170px auto;
+    width:800px;
+    height:480px;
+    background-color:#ccc;
+    list-style:none;
+    transform-style:preserve-3d;
+    transform:rotateX(0deg) rotateY(0deg);
+    /* 加个动画 */
+    animation:rotateMe 15s linear 0s infinite alternate;
+}
+ul:hover{
+    animation-play-state: paused;
+}
+li{
+    position:absolute;
+    top:0;
+    right:0;
+    overflow: hidden;
+}
+li:nth-child(1){
+    width:800px;
+    height:480px;
+    transform:translate(-400px,0) rotateY(90deg);
+}
+li:nth-child(2){
+    width:800px;
+    height:480px;
+    transform:translate(400px,0) rotateY(90deg);
+}
+img{
+    width:100%;
+    height:100%;
+}
+li:nth-child(3){
+    width:800px;
+    height:800px;
+    transform:translate(0,80px) rotateY(180deg) rotateX(90deg);                                      
+}
+li:nth-child(4){
+    width:800px;
+    height:800px;
+    transform:translate(0,-400px) rotateX(90deg);                                      
+}
+li:nth-child(5){
+    width:800px;
+    height:480px;
+    transform:translateZ(400px);
+}
+li:nth-child(6){
+    width:800px;
+    height:480px;
+    transform:translateZ(-400px) rotateZ(180deg);
+}
+.bg{
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    background:url(../img/bg.jpg) no-repeat 0 0 transparent;
+    background-size:cover;
+    z-index:-2;
+}
+.mask{
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:-1;
+    background-color:rgba(94,94,94,0.4);
+}
+@keyframes rotateMe{
+    0%{
+        transform:rotateX(0deg) rotateY(0deg);
+    }
+    25%{
+        transform:rotateX(90deg) rotateY(0deg);
+    }
+    50%{
+        transform:rotateX(180deg) rotateY(0deg);
+    }
+    75%{
+        transform:rotateX(180deg) rotateY(90deg);
+    }
+    100%{
+        transform:rotateX(180deg) rotateY(180deg);
+    }
+}
