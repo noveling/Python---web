@@ -1,0 +1,112 @@
+.navbar-brand{
+    background-image:url(../img/logo_1.png);
+    width:50px;
+    background-size:80%;
+    background-repeat: no-repeat;
+}
+.slide-bar .list-group-item{
+    border:0;
+    border-radius:3px;
+}
+.slide-bar .list-group-item.active{
+    background-color:rgb(163,163,163);
+}
+.news-list .news-list-item{
+    padding:15px 0;
+    border-bottom:1px solid #eee;
+}
+.news-list .news-list-item:first-child{
+    padding-top:0;
+    padding-bottom:15px;
+}
+.news-list .news-list-item .title{
+    display:block;
+    font-size:20px;
+    font-weight:bold;
+    line-height:1.7;
+    color:#444;
+}
+.news-list .news-list-item .title:hover{
+    text-decoration: none;
+    color:#337aab;
+}
+.news-space{
+    padding-top:35px;
+    padding-bottom:35px;
+}
+.news-list .news-list-item .info{
+    color:#888;
+}
+img{
+    display:block;
+    max-width:100%;
+    border-radius:3px;
+}
+.avatar img{
+    display:inline-block;
+    width:16px;
+    height:16px;
+    margin-right:5px;
+}
+.slide-bar-card{
+    background:rgba(0,0,0,0.05);
+    margin-top:20px;
+    padding:10px 0;
+    border-radius:3px;
+}
+.slide-bar-card .text-lg{
+    font-size:150%;
+    padding-top:13px;
+}
+.slide-bar-card .card-title,
+.slide-bar-card .card-body .list .item{
+    padding:10px 15px;
+}
+.slide-bar-card .card-title{
+    font-size:18px;
+    font-weight:bold;
+    padding-top:0;
+}
+.slide-bar-card .card-body .list .item:hover{
+    background-color:rgba(0,0,0,0.1)
+}
+.slide-bar-card .card-body .list .item .title{
+    font-weight:bold;
+}
+.slide-bar-card .card-body .list .item .desc{
+    color:#888;
+}
+.news-title{
+    line-height:1.5;
+}
+.news-status .label{
+    opacity: 0.8;
+}
+.news-content .text-para{
+    line-height:1.7;
+    text-indent: 2em;
+}
+.no-padding-h{
+    padding-left:0;
+    padding-right:0;
+}
+.footer{
+    margin-top:20px;
+    padding:50px 0;
+    text-align:center;
+    color:#999;
+}
+.container-small{
+    max-width:500px;
+}
+#toggle-checkbox:checked ~ .hidden-xs{
+    display:block !important;
+}
+.toggle-label{
+    display:hidden;
+    position:absolute;
+    right:20px;
+    top:15px;
+    font-size:16px;
+    color:#999;
+}
